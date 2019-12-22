@@ -4,10 +4,10 @@ using FluentValidation;
 using System;
 using System.Linq;
 using System.Reflection;
-using TauCode.Apps.Validation;
 using TauCode.Cqrs.Autofac;
 using TauCode.Cqrs.Commands;
 using TauCode.Cqrs.Queries;
+using TauCode.Cqrs.Validation;
 
 namespace TauCode.WebApi.Host.Cqrs
 {
