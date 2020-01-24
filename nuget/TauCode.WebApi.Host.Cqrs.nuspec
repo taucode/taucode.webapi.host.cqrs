@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>TauCode.WebApi.Host.Cqrs</id>
+    <version>1.0.0.0-dev-2019-12-22-19-24</version>
+    <authors>TauCode</authors>
+    <owners>TauCode</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <projectUrl>https://github.com/taucode/taucode.webapi.host.cqrs</projectUrl>
+    <description>
+      CQRS support for TauCode Web API host.
+    </description>
+    <releaseNotes>
+      Moving to nuget.org
+    </releaseNotes>
+    <tags>taucode webapi host cqrs</tags>
+    <dependencies>
+      <dependency id="TauCode.Cqrs.Autofac" version="1.0.0-dev-2019-12-22-01-03" />
+      <dependency id="TauCode.WebApi.Host" version="1.0.0-dev-2019-12-22-17-21" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\LICENSE.txt" target="" />
+    <file src="..\src\TauCode.WebApi.Host.Cqrs\bin\Release\netstandard2.0\TauCode.WebApi.Host.Cqrs.dll" target="lib\netstandard2.0" />
+    <file src="..\src\TauCode.WebApi.Host.Cqrs\bin\Release\netstandard2.0\TauCode.WebApi.Host.Cqrs.pdb" target="lib\netstandard2.0" />
+  </files>
+</package>
