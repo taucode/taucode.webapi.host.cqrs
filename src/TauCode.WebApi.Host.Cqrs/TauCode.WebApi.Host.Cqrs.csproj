@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="TauCode.Cqrs.Autofac" Version="1.0.0-dev-2019-12-22-01-03" />
-    <PackageReference Include="TauCode.WebApi.Host" Version="1.0.0-dev-2019-12-22-17-21" />
+    <PackageReference Include="TauCode.WebApi.Host" Version="1.0.0-dev-2020-01-27-12-11" />
   </ItemGroup>
 
 </Project>

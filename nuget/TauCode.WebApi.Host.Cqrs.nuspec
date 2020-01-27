@@ -12,12 +12,12 @@
       CQRS support for TauCode Web API host.
     </description>
     <releaseNotes>
-      Moving to nuget.org
+      Updated references.
     </releaseNotes>
     <tags>taucode webapi host cqrs</tags>
     <dependencies>
       <dependency id="TauCode.Cqrs.Autofac" version="1.0.0-dev-2019-12-22-01-03" />
-      <dependency id="TauCode.WebApi.Host" version="1.0.0-dev-2019-12-22-17-21" />
+      <dependency id="TauCode.WebApi.Host" version="1.0.0-dev-2020-01-27-12-11" />
     </dependencies>
   </metadata>
   <files>
