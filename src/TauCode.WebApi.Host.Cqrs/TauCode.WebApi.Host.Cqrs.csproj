@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="TauCode.Cqrs.Autofac" Version="1.0.0-dev-2019-12-22-01-03" />
-    <PackageReference Include="TauCode.WebApi.Host" Version="1.0.0-dev-2020-01-27-12-11" />
+    <PackageReference Include="TauCode.Cqrs.Autofac" Version="1.0.0-dev-2020-03-16-00-45" />
+    <PackageReference Include="TauCode.WebApi.Host" Version="1.0.0-dev-2020-03-18-01-04" />
   </ItemGroup>
 
 </Project>
