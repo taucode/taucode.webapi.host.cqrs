@@ -16,13 +16,15 @@
     </releaseNotes>
     <tags>taucode webapi host cqrs</tags>
     <dependencies>
-      <dependency id="TauCode.Cqrs.Autofac" version="1.0.0-dev-2019-12-22-01-03" />
-      <dependency id="TauCode.WebApi.Host" version="1.0.0-dev-2020-01-27-12-11" />
+      <group targetFramework=".NETStandard2.1">
+        <dependency id="TauCode.Cqrs.Autofac" version="1.0.0-dev-2020-03-16-00-45" />
+        <dependency id="TauCode.WebApi.Host" version="1.0.0-dev-2020-03-18-01-04" />
+      </group>
     </dependencies>
   </metadata>
   <files>
     <file src="..\LICENSE.txt" target="" />
-    <file src="..\src\TauCode.WebApi.Host.Cqrs\bin\Release\netstandard2.0\TauCode.WebApi.Host.Cqrs.dll" target="lib\netstandard2.0" />
-    <file src="..\src\TauCode.WebApi.Host.Cqrs\bin\Release\netstandard2.0\TauCode.WebApi.Host.Cqrs.pdb" target="lib\netstandard2.0" />
+    <file src="..\src\TauCode.WebApi.Host.Cqrs\bin\Release\netstandard2.1\TauCode.WebApi.Host.Cqrs.dll" target="lib\netstandard2.1" />
+    <file src="..\src\TauCode.WebApi.Host.Cqrs\bin\Release\netstandard2.1\TauCode.WebApi.Host.Cqrs.pdb" target="lib\netstandard2.1" />
   </files>
 </package>
