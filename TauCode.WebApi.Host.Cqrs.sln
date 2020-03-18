@@ -18,9 +18,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{53638E30-095
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2BE38D1A-33DF-49B8-9385-EEA4B7BCB857}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TauCode.WebApi.Host.Cqrs", "src\TauCode.WebApi.Host.Cqrs\TauCode.WebApi.Host.Cqrs.csproj", "{E0A8BAB4-F59D-42F0-868B-7307B7F462C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TauCode.WebApi.Host.Cqrs", "src\TauCode.WebApi.Host.Cqrs\TauCode.WebApi.Host.Cqrs.csproj", "{E0A8BAB4-F59D-42F0-868B-7307B7F462C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TauCode.WebApi.Host.Cqrs.Tests", "tests\TauCode.WebApi.Host.Cqrs.Tests\TauCode.WebApi.Host.Cqrs.Tests.csproj", "{49D5E7B6-6EA5-4AE1-B3EB-AACB4EC95EE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TauCode.WebApi.Host.Cqrs.Tests", "tests\TauCode.WebApi.Host.Cqrs.Tests\TauCode.WebApi.Host.Cqrs.Tests.csproj", "{49D5E7B6-6EA5-4AE1-B3EB-AACB4EC95EE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{1C457864-7B62-4D8B-95F0-8D864E09D779}"
+	ProjectSection(SolutionItems) = preProject
+		build\azure-pipelines-dev.yml = build\azure-pipelines-dev.yml
+		build\azure-pipelines.yml = build\azure-pipelines.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
