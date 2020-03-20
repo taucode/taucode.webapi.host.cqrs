@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentNHibernate" Version="2.1.2" />
+    <PackageReference Include="Inflector.NetStandard" Version="1.2.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="5.1.0" />
+    <PackageReference Include="TauCode.Db" Version="1.0.0-dev-2020-03-15-21-40" />
+    <PackageReference Include="TauCode.Domain.NHibernate" Version="1.0.0-dev-2020-03-16-20-09" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\TauCode.WebApi.Host.Cqrs\TauCode.WebApi.Host.Cqrs.csproj" />
+    <ProjectReference Include="..\TauCode.WebApi.Host.Cqrs.Tests.Core\TauCode.WebApi.Host.Cqrs.Tests.Core.csproj" />
+  </ItemGroup>
+
+
+</Project>

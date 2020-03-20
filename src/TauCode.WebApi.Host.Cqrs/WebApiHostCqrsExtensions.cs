@@ -13,28 +13,46 @@ namespace TauCode.WebApi.Host.Cqrs
 {
     public static class AppStartupExtensions
     {
-        public static IAppStartup AddCqrs(this IAppStartup appStartup, Assembly cqrsAssembly, Type commandHandlerDecoratorType)
+        public static IStartupHelper AddCqrs(
+            this IStartupHelper startupHelper,
+            Assembly cqrsAssembly,
+            Type commandHandlerDecoratorType)
         {
-            // todo arg checks
+            if (startupHelper == null)
+            {
+                throw new ArgumentNullException(nameof(startupHelper));
+            }
+
+            if (cqrsAssembly == null)
+            {
+                throw new ArgumentNullException(nameof(cqrsAssembly));
+            }
+
+            if (commandHandlerDecoratorType == null)
+            {
+                throw new ArgumentNullException(nameof(commandHandlerDecoratorType));
+            }
+
+            var containerBuilder = startupHelper.GetContainerBuilder();
 
             // command dispatching
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterType<CommandDispatcher>()
                 .As<ICommandDispatcher>()
                 .InstancePerLifetimeScope();
 
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterType<ValidatingCommandDispatcher>()
                 .As<IValidatingCommandDispatcher>()
                 .InstancePerLifetimeScope();
 
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterType<AutofacCommandHandlerFactory>()
                 .As<ICommandHandlerFactory>()
                 .InstancePerLifetimeScope();
 
             // register API ICommandHandler decorator
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterAssemblyTypes(cqrsAssembly)
                 .Where(t => t.IsClosedTypeOf(typeof(ICommandHandler<>)))
                 .As(t => t.GetInterfaces()
@@ -42,43 +60,42 @@ namespace TauCode.WebApi.Host.Cqrs
                     .Select(x => new KeyedService("commandHandler", x)))
                 .InstancePerLifetimeScope();
 
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterGenericDecorator(
                     commandHandlerDecoratorType,
                     typeof(ICommandHandler<>),
-                
                     "commandHandler");
 
             // command validator source
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterInstance(new CommandValidatorSource(cqrsAssembly))
                 .As<ICommandValidatorSource>()
                 .SingleInstance();
 
             // validators
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterAssemblyTypes(cqrsAssembly)
                 .Where(t => t.IsClosedTypeOf(typeof(AbstractValidator<>)))
                 .AsSelf()
                 .InstancePerLifetimeScope();
 
             // query handling
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterType<QueryRunner>()
                 .As<IQueryRunner>()
                 .InstancePerLifetimeScope();
 
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterType<ValidatingQueryRunner>()
                 .As<IValidatingQueryRunner>()
                 .InstancePerLifetimeScope();
 
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterType<AutofacQueryHandlerFactory>()
                 .As<IQueryHandlerFactory>()
                 .InstancePerLifetimeScope();
 
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterAssemblyTypes(cqrsAssembly)
                 .Where(t => t.IsClosedTypeOf(typeof(IQueryHandler<>)))
                 .AsImplementedInterfaces()
@@ -86,12 +103,12 @@ namespace TauCode.WebApi.Host.Cqrs
                 .InstancePerLifetimeScope();
 
             // query validator source
-            appStartup.GetContainerBuilder()
+            containerBuilder
                 .RegisterInstance(new QueryValidatorSource(cqrsAssembly))
                 .As<IQueryValidatorSource>()
                 .SingleInstance();
 
-            return appStartup;
+            return startupHelper;
         }
     }
 }
